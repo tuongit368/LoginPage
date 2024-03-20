@@ -1,29 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./header.css"
+// import Userlogo from './user.png'
+// import Locklogo from './lock.png'
 
 function Header() {
+
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("Username:", username)
+        console.log("Password:", password)
+    }
+
+ 
   return (
     <div>
 
-        <div class="logo"></div>
+        <div className="logo"></div>
 
-        <form action="">
+        <form onSubmit={e => handleSubmit(e)}>
 
-        <div class="username">
-            <div class="logouser"></div>
-            <input type="text" placeholder="USERNAME"/>
+        <div className="username">
+            <div className="logouser"></div>
+            {/* <img className='Userlogo' src={Userlogo} alt="Userlogo" /> */}
+            <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="USERNAME"/>
         </div>
 
-        <div class="password">
-            <div class="logopassword"></div>
-            <input type="password" placeholder="PASSWORD"/>
+        <div className="password">
+            <div className="logopassword"></div>
+            {/* <img className='Locklogo' src={Locklogo} alt="Locklogo" /> */}
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="PASSWORD"/>
         </div>
 
-        <div class="login">
-            <button type="submit">LOGIN</button>
+        <div className="login">
+            <button >LOGIN</button>
         </div>
 
-        <div class="forgotpassword">
+        <div className="forgotpassword">
             <h5>Forgot password?</h5>
         </div>
         

@@ -26,6 +26,11 @@ body {
     margin-bottom: 27px;
 }
 
+.username {
+    position: relative;
+    /* display: block; */
+}
+
 .username input {
     border: solid 2px;
     border-radius: 5px;
@@ -34,16 +39,27 @@ body {
     height: 45px;
     display: block;
     background: transparent;
-    padding-left: 51px;
+    padding-left: 25px;
     color: #fff;
     margin-left: auto;
     margin-right: auto;
+    /* position: relative; */
+    transition: .25s ease;
+}
 
+.username input:focus {
+    border-color: none ;
 }
 
 .username input::placeholder {
     /* padding-left: 51px; */
     color: #fff;
+}
+
+.Userlogo {
+    position: absolute;
+    top: 50%;
+    
 }
 
 .password {
@@ -58,10 +74,11 @@ body {
     height: 45px;
     display: block;
     background: transparent;
-    padding-left: 51px;
+    padding-left: 25px;
     color: #fff;
     margin-left: auto;
     margin-right: auto;
+    transition: .25s ease;
 }
 
 .password input::placeholder {
